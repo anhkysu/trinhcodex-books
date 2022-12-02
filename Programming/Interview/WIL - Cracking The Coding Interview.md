@@ -6,3 +6,7 @@
 - Interview process is a process. It has its own mechanism and output target. Use your skill and knowledge to satisfy the output target.
 
 ## B. Behind The Scenes
+
+> At Microsoft, interviewers want to see that you're passionate about technology.
+> At Amazonn, scalability and design are usually paid attention to. There's a bar raiser who is responsible for raising talent standard in the company.
+> At Google, you should also pay attention to System Scalability and Design.
