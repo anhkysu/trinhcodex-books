@@ -10,3 +10,12 @@
 > At Microsoft, interviewers want to see that you're passionate about technology.
 > At Amazonn, scalability and design are usually paid attention to. There's a bar raiser who is responsible for raising talent standard in the company.
 > At Google, you should also pay attention to System Scalability and Design.
+
+
+## C. 4 Modes of Interviewers
+
+- Sanity Check: Quick & Basic questions
+- Quality Check: More Challenging questions
+- Specialists Questions: Test knowledge of specifice topics
+- Proxy Knowledge
+
