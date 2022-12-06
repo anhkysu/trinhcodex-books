@@ -1,0 +1,82 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["6zt4"],{Zfii:function(t,e,o){"use strict";var r=o("TqRt");Object.defineProperty(e,"__esModule",{value:!0}),e.QUERY_FOR_TESTING=void 0,e.default=function(t){const e=t.path.startsWith("/")?t.path.substring(1):t.path,{queryParams:o={}}=t,r=(0,s.default)((0,a.default)({},t.queryParams,{lang:d.default.kaLocale})),n="1"===o.modal,l=function(t){if(void 0===t.follow_redirects)return!u.default.isServerSide();return"1"===t.follow_redirects}(o),$={path:e,queryParams:r,isModal:n,followRedirects:l,countryCode:d.default.remoteCountry};return async function(t,e){var o;const r=await(0,i.standaloneGqlFetch)(t,{variables:e,context:{fastlyCaching:c.Persist.UntilPublish}});return JSON.parse(null!=(o=r.contentJson)?o:"")}(S(e,n),$)},e.getContentQuery=S;var a=r(o("pVnL")),n=r(o("lTCR")),l=o("8r+/"),s=r(o("gXb0")),i=o("okJ1"),d=r(o("Q8Wn")),u=r(o("FCtg")),c=o("uNeE");let $,y,p,f,g,C=t=>t;const q=(0,l.gqlOp)((0,n.default)($||($=C`
+    query FetchContentData(
+        $path: String!
+        $queryParams: String!
+        $isModal: Boolean
+        $followRedirects: Boolean
+        $countryCode: String!
+    ) {
+        contentJson: curatedContentLibraryJson(
+            path: $path
+            queryParams: $queryParams
+            isModal: $isModal
+            followRedirects: $followRedirects
+            countryCode: $countryCode
+        )
+    }
+`))),h=q;e.QUERY_FOR_TESTING=h;const R=(0,l.gqlOp)((0,n.default)(y||(y=C`
+    query FetchArticleContentData(
+        $path: String!
+        $queryParams: String!
+        $isModal: Boolean
+        $followRedirects: Boolean
+        $countryCode: String!
+    ) {
+        contentJson: curatedArticleContentLibraryJson(
+            path: $path
+            queryParams: $queryParams
+            isModal: $isModal
+            followRedirects: $followRedirects
+            countryCode: $countryCode
+        )
+    }
+`))),w=(0,l.gqlOp)((0,n.default)(p||(p=C`
+    query FetchVideoContentData(
+        $path: String!
+        $queryParams: String!
+        $isModal: Boolean
+        $followRedirects: Boolean
+        $countryCode: String!
+    ) {
+        contentJson: curatedVideoContentLibraryJson(
+            path: $path
+            queryParams: $queryParams
+            isModal: $isModal
+            followRedirects: $followRedirects
+            countryCode: $countryCode
+        )
+    }
+`))),m=(0,l.gqlOp)((0,n.default)(f||(f=C`
+    query FetchExerciseContentData(
+        $path: String!
+        $queryParams: String!
+        $isModal: Boolean
+        $followRedirects: Boolean
+        $countryCode: String!
+    ) {
+        contentJson: curatedExerciseContentLibraryJson(
+            path: $path
+            queryParams: $queryParams
+            isModal: $isModal
+            followRedirects: $followRedirects
+            countryCode: $countryCode
+        )
+    }
+`))),P=(0,l.gqlOp)((0,n.default)(g||(g=C`
+    query FetchProgrammingContentData(
+        $path: String!
+        $queryParams: String!
+        $isModal: Boolean
+        $followRedirects: Boolean
+        $countryCode: String!
+    ) {
+        contentJson: curatedProgrammingContentLibraryJson(
+            path: $path
+            queryParams: $queryParams
+            isModal: $isModal
+            followRedirects: $followRedirects
+            countryCode: $countryCode
+        )
+    }
+`)));function S(t,e){return e?q:RegExp(".*/a/.*").test(t)?R:RegExp(".*/v/.*").test(t)?w:RegExp(".*/e/.*").test(t)?m:RegExp(".*/(?:pc|pi|pp|pt)/.*").test(t)?P:q}}}]);
+//# sourceMappingURL=../../sourcemaps/en/6zt4.d8fa5101d26ed829e2cc.js.map

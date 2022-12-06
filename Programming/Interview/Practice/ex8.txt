@@ -1,0 +1,20 @@
+Suppose we had an algorithm that took in an array of strings, sorted each string, and then sorted the full 
+array. What would the runtime be?
+
+
+someFunc(arrayOfStrings){
+    - sort string element
+    - sort the full array
+}
+
+What is the runtime of someFunc?
+
+- array length: n
+- longest string length: L
+
+=> sort string element takes: O(L*logL);
+=> A job: sort n string elements takes: O(n*L*logL);
+=> B job: sort this array of strings takes: O(n*logn). If string element comparison (deep comparison) is taken into account, each string comparison takes O(L) time => B job takes O(n*L*logn)
+=> do A then do B => addition A + B
+
+=> someFunc algorithm takes: O(n*L*(logL + logn));
