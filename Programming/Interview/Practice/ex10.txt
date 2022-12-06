@@ -1,0 +1,14 @@
+// checking prime number
+boolean isPrime(int n){
+    for(int x= 2; x*x <= n; x++){
+        if(n%x == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isPrime(2));
+
+// x^2 <= n => x <= sqrt(n) => times computing: sqrt(n) -1
+// Time complexity: O(sqrt(n))

@@ -1,0 +1,20 @@
+int Sum(Node node){
+    if(node == null){
+        return 0;
+    }
+    return sum(node.left) + node.value + sum(node.right);
+}
+
+
+Call N: total number of nodes;
+
+Solution 1: Recursive pattern
+
+=> depth: log2N
+=> branches: 2
+=> runtime: O(2^(log2N)) = O(N)
+
+Solution 2: Straight Forward Look
+
+=> algorithm touch each node
+=> runtime: O(N)
