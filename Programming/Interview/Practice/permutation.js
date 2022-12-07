@@ -18,8 +18,33 @@ function createRem(str){
 }
 
 function findStringPermutation(str){
-
+    // Input "ab"
+    // Output ["ab", "ba"]
+    return findPermutation(str, "");
 }
 
-let strf = "abc";
-console.log(permutation(strf));
+function findPermutation(concatStr, prefix){
+    // input ("a", "b")
+    // output ["ba"]
+    // input ("ab", "c")
+    // output ["cba", "cab"]
+    let result = [];
+    let process = concatStr;
+    for(let i = 0; i < process.length; i++){
+        let anotherPermutation = findPermutation(process.substring(0, i) + process.substring(i+1), process[i]);
+        anotherPermutation.forEach(item => {
+            result.push(prefix + item);
+        });
+    }
+    if(process.length == 0){
+        result = [prefix];
+    }
+
+    return result;
+}
+
+// Time Complexity:  N^2 * N!
+
+
+let strf = "bcad";
+console.log(findStringPermutation(strf));

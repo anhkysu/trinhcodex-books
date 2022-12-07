@@ -4,7 +4,7 @@ void permutation(String str){
 
 void permutation(String str, String prefix){
     if(str.length() == 0){
-        println(prefix)
+        println(prefix) // O(n)
     } else {
         for(int i = 0; i < str.length(); i++){
             String rem = str.substring(0, i) + str.substring(i+1);
@@ -12,3 +12,13 @@ void permutation(String str, String prefix){
         }
     }
 }
+
+
+// Time Complexity: 
+// Define concatStr length as N
+// In Each Base Call: Recursive call times => Loop (N-1) times => Loop (N - 2) times => Loop 1 times
+// In Each Base Call => Recursive call times: N * (N - 1) * (N - 2) * ... * 2 * 1 = N!
+// In Each Base Call: Print time: 1
+// There are N bases: => Loop calculating times + Recursive call times of findPermutations(concatStr, prefix): N * N!
+// There are N bases: => print times: N
+// Total Runtime: N * N * N! = N^2 * N!;
