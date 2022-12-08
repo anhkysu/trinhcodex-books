@@ -5,14 +5,16 @@
   - [Definition](#definition)
   - [Analogy](#analogy)
   - [Time Complexity](#time-complexity)
-    - [  Big O, Big Theta, Big Omega](#-big-o-big-theta-big-omega)
-    - [   Best Case, Worst Case, Expected Case](#--best-case-worst-case-expected-case)
+    - [&nbsp; Big O, Big Theta, Big Omega](#-big-o-big-theta-big-omega)
+    - [&nbsp;  Best Case, Worst Case, Expected Case](#--best-case-worst-case-expected-case)
   - [Space Complexity](#space-complexity)
   - [In processing Big O, we drop the constants and drop the non-dominant terms.](#in-processing-big-o-we-drop-the-constants-and-drop-the-non-dominant-terms)
   - [Multi-part algorithm: Add vs. Multiply](#multi-part-algorithm-add-vs-multiply)
   - [Armotized time](#armotized-time)
   - [LogN Runtime](#logn-runtime)
   - [Recursive Runtime](#recursive-runtime)
+  - [Core Data Structures, Algorithms, Concepts](#core-data-structures-algorithms-concepts)
+  - [Walking through a problem: PAGE 62](#walking-through-a-problem-page-62)
 
 
 # The Interview Process
@@ -105,3 +107,11 @@
 > - The base of an exponent does matter. The base of log does not matter. (In Big O)
 
 
+## Core Data Structures, Algorithms, Concepts
+> - Data Structures: Linked Lists; Trees, Tries & Graph; Heaps; Vector, ArrayLists, HashTables
+> - Algorithms: Breadth-first Search; Depth-first Search; Binary Search; Merge Sort; Quick Sort
+> - Concepts: Bit Manipulation; Memory (Stask vs. Heap); Recursion; Dynamic Programming; Big O Time & Space
+
+## Walking through a problem: PAGE 62
+
+65 - 5
