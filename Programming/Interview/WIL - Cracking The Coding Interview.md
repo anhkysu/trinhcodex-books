@@ -141,4 +141,4 @@
 - We try to solve problem first for a base case (n = 1) and then try to build up from there. When we get to more complex/interesting cases (n=3, n=4), try to build those from prior solutions.
 
 
-
+reading 72
