@@ -14,7 +14,13 @@
   - [LogN Runtime](#logn-runtime)
   - [Recursive Runtime](#recursive-runtime)
   - [Core Data Structures, Algorithms, Concepts](#core-data-structures-algorithms-concepts)
+  - [Power Of 2 Table](#power-of-2-table)
   - [Walking through a problem: PAGE 62](#walking-through-a-problem-page-62)
+  - [Optimize and Solve Techniques:](#optimize-and-solve-techniques)
+    - [Technique 01 Look for BUD](#technique-01-look-for-bud)
+    - [Technique 02 DIY](#technique-02-diy)
+  - [Technique 03 Simplify & Generalize](#technique-03-simplify--generalize)
+  - [Technique 04 Base Case & Build](#technique-04-base-case--build)
 
 
 # The Interview Process
@@ -108,10 +114,31 @@
 
 
 ## Core Data Structures, Algorithms, Concepts
+![coreknowledge01.png](./Includes/Images/coreknowledge01.PNG)
 > - Data Structures: Linked Lists; Trees, Tries & Graph; Heaps; Vector, ArrayLists, HashTables
 > - Algorithms: Breadth-first Search; Depth-first Search; Binary Search; Merge Sort; Quick Sort
 > - Concepts: Bit Manipulation; Memory (Stask vs. Heap); Recursion; Dynamic Programming; Big O Time & Space
 
+## Power Of 2 Table
+![powerof2table.png](./Includes/Images/powerof2table.PNG)
+
 ## Walking through a problem: PAGE 62
 
-65 - 5
+## Optimize and Solve Techniques: 
+### Technique 01 Look for BUD
+- **Bottlenecks** : *part of the algorithm that slows down the overall runtime.*
+- **Unnecessary Work**: *(find solutions of a^3 + b^3 = c^3 + d^3 is a really good example)*
+- **Duplicated Work**
+
+### Technique 02 DIY
+- **Give yourself a real big example of similar problem and try to solve it**
+
+## Technique 03 Simplify & Generalize
+- First, we try to simplify or tweak some constraints such as the data type and solve the simplified version of the problem.
+- Secondly, try to adapt the algorithm to the more complex problem.
+
+## Technique 04 Base Case & Build
+- We try to solve problem first for a base case (n = 1) and then try to build up from there. When we get to more complex/interesting cases (n=3, n=4), try to build those from prior solutions.
+
+
+
