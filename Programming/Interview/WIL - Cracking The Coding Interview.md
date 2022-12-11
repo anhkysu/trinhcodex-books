@@ -5,8 +5,8 @@
   - [Definition](#definition)
   - [Analogy](#analogy)
   - [Time Complexity](#time-complexity)
-    - [&nbsp; Big O, Big Theta, Big Omega](#-big-o-big-theta-big-omega)
-    - [&nbsp;  Best Case, Worst Case, Expected Case](#--best-case-worst-case-expected-case)
+    - [  Big O, Big Theta, Big Omega](#-big-o-big-theta-big-omega)
+    - [   Best Case, Worst Case, Expected Case](#--best-case-worst-case-expected-case)
   - [Space Complexity](#space-complexity)
   - [In processing Big O, we drop the constants and drop the non-dominant terms.](#in-processing-big-o-we-drop-the-constants-and-drop-the-non-dominant-terms)
   - [Multi-part algorithm: Add vs. Multiply](#multi-part-algorithm-add-vs-multiply)
@@ -19,8 +19,20 @@
   - [Optimize and Solve Techniques:](#optimize-and-solve-techniques)
     - [Technique 01 Look for BUD](#technique-01-look-for-bud)
     - [Technique 02 DIY](#technique-02-diy)
-  - [Technique 03 Simplify & Generalize](#technique-03-simplify--generalize)
-  - [Technique 04 Base Case & Build](#technique-04-base-case--build)
+  - [Technique 03 Simplify \& Generalize](#technique-03-simplify--generalize)
+  - [Technique 04 Base Case \& Build](#technique-04-base-case--build)
+  - [Technique 05 Data Structure Brainstorm](#technique-05-data-structure-brainstorm)
+  - [Best Conveivable Runtime](#best-conveivable-runtime)
+  - [Handling Incorrect Answers](#handling-incorrect-answers)
+  - [When You Have Heard A Problem before](#when-you-have-heard-a-problem-before)
+  - [The Language For Interviews](#the-language-for-interviews)
+  - [What Good Coding Looks Like](#what-good-coding-looks-like)
+    - [Use Data Structures Generously](#use-data-structures-generously)
+    - [Appropriate Code Reuse](#appropriate-code-reuse)
+    - [Modular Code](#modular-code)
+    - [Flexible \& Robust](#flexible--robust)
+    - [Error Checking](#error-checking)
+  - [Don't give up](#dont-give-up)
 
 
 # The Interview Process
@@ -140,5 +152,28 @@
 ## Technique 04 Base Case & Build
 - We try to solve problem first for a base case (n = 1) and then try to build up from there. When we get to more complex/interesting cases (n=3, n=4), try to build those from prior solutions.
 
+## Technique 05 Data Structure Brainstorm
+- Try to do more problems, you will develop the instinct on which data structure to apply.
 
-reading 72
+## Best Conveivable Runtime
+- BCR is the best runtime you could conceive of a solution to a problem having.There is no way you could beat the BCR.
+- Having BCR will help you to try improving your algorithm from the poorest time complexity to get closer to the BCR.
+
+## Handling Incorrect Answers
+- There are always mistakes during interviews. The point is that interviewers just evaluate how optimal your solution and how long did it take you to come up with a solution. Also, it's relative comparision and problems are usually really hard to solve in short amount of time.
+
+## When You Have Heard A Problem before
+- Admit this to your interviewer because they cannot evaluate your problem solving skills and they will give you big honesty points if you do reveal this.
+
+## The Language For Interviews
+- You can pick any language you're comfortable with to code. But the point is that inteviewers may or may not know it. So, select the language that is really readable.
+
+## What Good Coding Looks Like
+### Use Data Structures Generously
+### Appropriate Code Reuse
+### Modular Code
+### Flexible & Robust
+### Error Checking
+
+## Don't give up
+- Interview questions can be overwhelming. Do you rise to a challenge, or do you shrink back in fear. **It's important that you step up and eagerly meet a tricky problem head-on.**

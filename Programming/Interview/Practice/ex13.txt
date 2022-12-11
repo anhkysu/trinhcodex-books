@@ -5,5 +5,5 @@ int Fib (int n){
 }
 
 
-// Time Complexity: 
-
+// Time Complexity: Upper Bound: O(2^n);
+// Exact Complexity: Tight Bound: O(1.6^n);
