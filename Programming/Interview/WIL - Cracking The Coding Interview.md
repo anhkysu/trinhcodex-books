@@ -5,8 +5,8 @@
   - [Definition](#definition)
   - [Analogy](#analogy)
   - [Time Complexity](#time-complexity)
-    - [  Big O, Big Theta, Big Omega](#-big-o-big-theta-big-omega)
-    - [   Best Case, Worst Case, Expected Case](#--best-case-worst-case-expected-case)
+    - [&nbsp; Big O, Big Theta, Big Omega](#-big-o-big-theta-big-omega)
+    - [&nbsp;  Best Case, Worst Case, Expected Case](#--best-case-worst-case-expected-case)
   - [Space Complexity](#space-complexity)
   - [In processing Big O, we drop the constants and drop the non-dominant terms.](#in-processing-big-o-we-drop-the-constants-and-drop-the-non-dominant-terms)
   - [Multi-part algorithm: Add vs. Multiply](#multi-part-algorithm-add-vs-multiply)
@@ -19,8 +19,8 @@
   - [Optimize and Solve Techniques:](#optimize-and-solve-techniques)
     - [Technique 01 Look for BUD](#technique-01-look-for-bud)
     - [Technique 02 DIY](#technique-02-diy)
-  - [Technique 03 Simplify \& Generalize](#technique-03-simplify--generalize)
-  - [Technique 04 Base Case \& Build](#technique-04-base-case--build)
+  - [Technique 03 Simplify & Generalize](#technique-03-simplify--generalize)
+  - [Technique 04 Base Case & Build](#technique-04-base-case--build)
   - [Technique 05 Data Structure Brainstorm](#technique-05-data-structure-brainstorm)
   - [Best Conveivable Runtime](#best-conveivable-runtime)
   - [Handling Incorrect Answers](#handling-incorrect-answers)
@@ -30,9 +30,25 @@
     - [Use Data Structures Generously](#use-data-structures-generously)
     - [Appropriate Code Reuse](#appropriate-code-reuse)
     - [Modular Code](#modular-code)
-    - [Flexible \& Robust](#flexible--robust)
+    - [Flexible & Robust](#flexible--robust)
     - [Error Checking](#error-checking)
   - [Don't give up](#dont-give-up)
+- [The Offer And Beyond](#the-offer-and-beyond)
+  - [Handling offers & rejections](#handling-offers--rejections)
+    - [Offer deadline & extension](#offer-deadline--extension)
+    - [Declining an offer](#declining-an-offer)
+    - [Handling rejection](#handling-rejection)
+    - [Evaluating the offer](#evaluating-the-offer)
+      - [Financial Package](#financial-package)
+      - [Career Development](#career-development)
+      - [Company Stability](#company-stability)
+      - [Hapiness Factor](#hapiness-factor)
+  - [Negotiation](#negotiation)
+  - [On The Job](#on-the-job)
+    - [Set a timeline](#set-a-timeline)
+    - [Build a strong relationship.](#build-a-strong-relationship)
+    - [Ask for what you want.](#ask-for-what-you-want)
+    - [Continue interviewing annually to keep track of the working competence.](#continue-interviewing-annually-to-keep-track-of-the-working-competence)
 
 
 # The Interview Process
@@ -177,3 +193,39 @@
 
 ## Don't give up
 - Interview questions can be overwhelming. Do you rise to a challenge, or do you shrink back in fear. **It's important that you step up and eagerly meet a tricky problem head-on.**
+
+# The Offer And Beyond
+## Handling offers & rejections
+### Offer deadline & extension
+- When company extends an offer, there's usually deadline attached to it. If you still want to hear back reponses from other companies, you can ask for an extension.
+
+### Declining an offer
+- Even if you don't want to work for the company this time, you should try to decline the offer in good terms and keep a line of communication open. "In good terms" means inarguable and non-offensive.
+
+### Handling rejection
+- Getting rejected is unfortunate, but it does not mean that you're not a great engineer. It's because you did not "test well".
+- Companies usually reach out to old candidates because of their prior performance. So, try your best to complete the interview.
+
+### Evaluating the offer
+#### Financial Package
+- Don't just focus on salary because it's just one part of your financial compensation. Others can be signing bonus, relocation, annual bonus, stock options and grants.
+- How the company advances your career will be the much more important factor.
+#### Career Development
+- Fame of company name, promotion plan, company growth, team growth.
+#### Company Stability
+- The more stable the less possibility of getting fired.
+- The more stable the slower company grows.
+#### Hapiness Factor
+- The product, teammate, company culture.
+
+## Negotiation
+- You have to negotiate specifically, carefully, and over your best medium.
+  
+## On The Job
+### Set a timeline
+- By outlining your path in advance and checking on it regularly, you can avoid falling into a complacency trap.
+### Build a strong relationship.
+### Ask for what you want.
+### Continue interviewing annually to keep track of the working competence.
+
+
