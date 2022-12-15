@@ -227,5 +227,3 @@
 ### Build a strong relationship.
 ### Ask for what you want.
 ### Continue interviewing annually to keep track of the working competence.
-
-
