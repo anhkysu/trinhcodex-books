@@ -19,4 +19,5 @@ int sqrt_helper(int n, int min, int max)
     { //too high
         return sqrt_helper(n, min, guess - 1); // try lower 
     }
+    // Big O: O(logn)
 }
