@@ -17,5 +17,6 @@ int sqrt_helper(int n, int min, int max)
     }
     else
     { //too high
+        return sqrt_helper(n, min, guess - 1); // try lower 
     }
 }
