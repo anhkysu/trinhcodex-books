@@ -9,4 +9,4 @@ int div(int a, int b) {
     } 
     return count; 
 }
-// Runtime: O(A/B + 1) = O(A)
+// Runtime: O(A/B + 1) = O(A/B)
