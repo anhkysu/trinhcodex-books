@@ -7,6 +7,31 @@ function compressString(x: string){
     let result = "";
     let splitedArray = x.split("");
     let tempRptCount = 0;
+    let tempChar = splitedArray[0];
+    for(let i = 0; i < splitedArray.length; i++) {
+        if(splitedArray[i] == tempChar || i == 0){
+            tempRptCount++;
+        } else {
+            splitedArray.splice(i - 1, tempRptCount - 1, tempRptCount.toString());
+            tempChar = splitedArray[i];
+            i = i + 2 - (tempRptCount);
+            tempRptCount = 1;
+        }
+    }
+    result = splitedArray.join("");
+    if(result.length < x.length){
+        console.log(x);
+        return x;
+    } else {
+        console.log(result);
+        return result;
+    }
+}
+
+function compressString_notGoodAtAll(x: string){
+    let result = "";
+    let splitedArray = x.split("");
+    let tempRptCount = 0;
     for(let i = 1; i < splitedArray.length; i++) {
         if(splitedArray[i] == splitedArray[i-1]){
             tempRptCount++;
