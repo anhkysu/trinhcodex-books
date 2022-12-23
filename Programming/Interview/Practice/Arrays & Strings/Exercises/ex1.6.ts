@@ -47,6 +47,7 @@ function compressString(x: string){
         console.log(result);
         return result;
     }
+    // Complexity: O(n)
 }
 
 function compressString_notGoodAtAll(x: string){
