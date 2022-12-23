@@ -5,33 +5,42 @@
 // inputString = aabcccdd
 // tempChar = ""
 // i = 0; char = "a" != tempChar; countChar = 1; tempChar = "a"; nextChar = "a" = char 
-// i = 1; char = "a" = tempChar; countChar = 2; tempChar = "a"; nextChar = "b" != char => splice(1, 1, "2")  /// splice (countChar - 1) elements starting from i - (countChar) + 1 and append "a2" (splice(0, 1))
+// i = 1; char = "a" = tempChar; countChar = 2; tempChar = "a"; nextChar = "b" != char => splice(1, 1, "2"); i =1  /// splice (countChar - 1) elements starting from i - (countChar) + 1 and append "a2" (splice(0, 1))
 // inputString = a2bcccdd
-// i = 2; char = "b" != tempChar; countChar = 1; tempChar = "b"; nextChar = "c" != char => splice(3, 0, "1")
-// i = 3; char = "c" != tempChar; countChar = 1; tempChar = "c"; nextChar = "c" = char 
-// i = 4; char = "c" = tempChar; countChar = 2; tempChar = "a"; nextChar = "c" = char 
-// i = 5; char = "c" = tempChar; countChar = 3; tempChar = "c"; nextChar = "d" != char => splice(4, 2, "3");
+// i = 2; char = "b" != tempChar; countChar = 1; tempChar = "b"; nextChar = "c" != char => splice(3, 0, "1"); i = 3
+// inputString = a2b1cccdd
+// i = 4; char = "c" != tempChar; countChar = 1; tempChar = "c"; nextChar = "c" = char 
+// i = 5; char = "c" = tempChar; countChar = 2; tempChar = "a"; nextChar = "c" = char 
+// i = 6; char = "c" = tempChar; countChar = 3; tempChar = "c"; nextChar = "d" != char => splice(5, 2, "3"); i = 5
+// inputString = a2b1c3dd
 // i = 6; char = "d" != tempChar; countChar = 1; tempChar = "d"; nextChar = "d" = char
-// i = 7; char = "d" = tempChar; countChar = 2; tempChar = "d"; i = 7
+// i = 7; char = "d" = tempChar; countChar = 2; tempChar = "d"; i = 7 => splice(7, 1, "2")
 
+// splice(i - (countChar - 1) + 1, countChar - 1, countChar.toString());
+// i = 1 => i = 1 : i = i - (countChar - 1) + 1 = 1 - (2 - 1) + 1 = 1
+// i = 2 => i = 3 : i = i - (countChar - 1) + 1 = 2 - (1 - 1) + 1 = 3
+// i = 6 => i = 7 : i = 6 - (2 - 1) + 1 = 6
 
 function compressString(x: string){
     let result = "";
     let splitedArray = x.split("");
-    let tempRptCount = 0;
-    let tempChar = splitedArray[0];
+    let countChar = 0;
+    let tempChar = "";
     for(let i = 0; i < splitedArray.length; i++) {
-        if(splitedArray[i] == tempChar || i == 0){
-            tempRptCount++;
+        if(splitedArray[i] == tempChar){
+            countChar++;
         } else {
-            splitedArray.splice(i - 1, tempRptCount - 1, tempRptCount.toString());
-            tempChar = splitedArray[i];
-            i = i + 2 - (tempRptCount);
-            tempRptCount = 1;
+            countChar = 1;
+        }
+        tempChar = splitedArray[i];
+        if(splitedArray[i+1] != splitedArray[i] || i == splitedArray.length){   
+            splitedArray.splice(i - (countChar - 1) + 1, countChar - 1, countChar.toString());
+            i = i - (countChar - 1) + 1;
         }
     }
+    
     result = splitedArray.join("");
-    if(result.length < x.length){
+    if(result.length > x.length){
         console.log(x);
         return x;
     } else {
@@ -102,4 +111,6 @@ function sortArray(sortedArray: Array<string>){
 }
 
 
-compressString('aabcccccaaa');
+compressString('aabccccccccccggbbbbbbbbbb');
+// aabccccccccccggbbbbbbbbbb
+// a2bccccccccccggbbbbbbbbbb
