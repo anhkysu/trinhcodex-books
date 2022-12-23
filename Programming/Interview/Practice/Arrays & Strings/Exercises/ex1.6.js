@@ -2,31 +2,12 @@
 // of  repeated  characters.  For  example,  the  string  a a b c c c c c a a a  w o u l d  become  a 2 b l c 5 a 3 ,  If  the 
 // "compressed" string  would  not  become  smaller than  the original  string, your method  should  return  
 // the  original  string. You  can  assume the  string has  only  uppercase and  lowercase  letters (a - z)
-// aabccc
-// i = 0
-// aabccc
-// i = 1
-// a2bccc
-// i = 2
-// a2bccc
-// i = 3
-// a2b1ccc
-// i = 4
-// a2b1ccc
-// i = 5
-// a2b1ccc
-// i = 6
-// a2b1ccc
-// i = 7
-// a2b1c3
-
-
 function compressString(x) {
     var result = "";
     var splitedArray = x.split("");
     var tempRptCount = 0;
     var tempChar = splitedArray[0];
-    for (var i = 0; i <= splitedArray.length; i++) {
+    for (var i = 0; i < splitedArray.length; i++) {
         if (splitedArray[i] == tempChar || i == 0) {
             tempRptCount++;
         }
