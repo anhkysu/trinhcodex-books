@@ -54,10 +54,8 @@ function rotateImg90(image){
             newImage[j][i] = copiedImage[i][dimension - 1 - j]
         }
     }
-    console.log(image);
-    console.log(newImage);
     // COmplexity: O(n^2)
 }
 
-let testImage =  [[1,2,3],[4,5,6],[7,8,9]];
+let testImage =  [[1,2,3,4],[5,6, 7, 8],[7,8,9, 10], [1,2,3,4]];
 rotateImg90(testImage);

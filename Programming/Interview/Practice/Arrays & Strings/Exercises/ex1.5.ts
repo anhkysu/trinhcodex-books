@@ -7,6 +7,13 @@
 // p a l e , bale  ->  t r u e  
 // p a l e , bake  ->  f a l s e 
 
+// One Edit Away means that 
+// One Replacement Edit Away
+// One Insertion Edit Away
+// One Removal Edit Away
+
+// (order should be paid attention)
+
 function isOneEditAway(a: string, b:string): boolean{ // O(a+b)
     let result:boolean = true;
     let _a = {};

@@ -19,6 +19,29 @@
 // i = 1 => i = 1 : i = i - (countChar - 1) + 1 = 1 - (2 - 1) + 1 = 1
 // i = 2 => i = 3 : i = i - (countChar - 1) + 1 = 2 - (1 - 1) + 1 = 3
 // i = 6 => i = 7 : i = 6 - (2 - 1) + 1 = 6
+function compressString_better(x) {
+    var result = "";
+    var splitedArray = x.split("");
+    var countChar = 0;
+    for (var i = 0; i < splitedArray.length; i++) {
+        countChar++;
+        if (splitedArray[i + 1] != splitedArray[i] || i + 1 == splitedArray.length) {
+            result += splitedArray[i];
+            result += countChar;
+            countChar = 0;
+        }
+    }
+    //result = splitedArray.join("");
+    if (result.length > x.length) {
+        console.log(x);
+        return x;
+    }
+    else {
+        console.log(result);
+        return result;
+    }
+    // Complexity: O(n)
+}
 function compressString(x) {
     var result = "";
     var splitedArray = x.split("");
@@ -46,6 +69,7 @@ function compressString(x) {
         console.log(result);
         return result;
     }
+    // Complexity: O(n)
 }
 function compressString_notGoodAtAll(x) {
     var result = "";
@@ -107,6 +131,6 @@ function sortArray(sortedArray) {
     }
     return sortedArray;
 }
-compressString('aabccccccccccggbbbbbbbbbb');
+compressString_better('aabccccccccccggbbbbbbbbbb');
 // aabccccccccccggbbbbbbbbbb
 // a2bccccccccccggbbbbbbbbbb
