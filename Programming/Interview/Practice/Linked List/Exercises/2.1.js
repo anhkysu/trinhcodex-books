@@ -29,4 +29,66 @@ for (var i = 0; i < arrayOfNodes.length; i++) {
         arrayOfNodes[i].next = arrayOfNodes[i + 1];
     }
 }
-console.log(JSON.stringify(newLinkedList));
+function removeDuplicatesFromUnsortedLinkedList(unsortedLinkedList) {
+    var linkedListItem = unsortedLinkedList.headNode;
+    var countNumber = {};
+    var previousNode = null;
+    while (linkedListItem.next != null) {
+        var currentData = linkedListItem.data;
+        var nextNode = linkedListItem.next;
+        var nextData = nextNode.data;
+        if (countNumber[currentData] == undefined) {
+            countNumber[currentData] = 0;
+        }
+        countNumber[currentData]++;
+        previousNode = linkedListItem;
+        linkedListItem = linkedListItem.next;
+    }
+}
+//removeDuplicatesFromUnsortedLinkedList();
+function removeDuplicates_1(headNode) {
+    var countNumber = {};
+    var linkedListItem = headNode;
+    // traverse each data, if
+}
+function countDataElement(headNode) {
+    var countNumber = {};
+    var linkedListItem = headNode;
+    while (linkedListItem.next != null) {
+        if (countNumber[linkedListItem.data] == undefined) {
+            countNumber[linkedListItem.data] = 0;
+        }
+        countNumber[linkedListItem.data]++;
+        linkedListItem = linkedListItem.next;
+    }
+    if (countNumber[linkedListItem.data] == undefined) {
+        countNumber[linkedListItem.data] = 0;
+    }
+    countNumber[linkedListItem.data]++;
+    console.log(countNumber);
+}
+function removeSevenBySixElement(headNode) {
+    // level 0: 
+    // level 1: headNode.next
+    // level 2: headNode.next.next
+    // level 3: headNode.next.next.next
+    // ...
+    headNode.next = headNode.next.next.next.next.next;
+    console.log(JSON.stringify(headNode));
+}
+function removeSevenByThreeElement(headNode) {
+    headNode.next = headNode.next.next;
+    console.log(JSON.stringify(headNode));
+}
+function printAllDataOfLinkedListWithoutHead(headNode) {
+    // traverse each node and prints all value
+    var linkedListItem = headNode;
+    if (linkedListItem.next == null) {
+        console.log(linkedListItem.data);
+        return;
+    }
+    printAllDataOfLinkedListWithoutHead(linkedListItem.next);
+    console.log(linkedListItem.data);
+}
+// retrieve previous node given current node
+countDataElement(newLinkedList.headNode);
