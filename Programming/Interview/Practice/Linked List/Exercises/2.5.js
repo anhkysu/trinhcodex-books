@@ -54,8 +54,8 @@ function sumListBruteForce(linkedListNo1, linkedListNo2){
     return linkedList;
 }
 
-function sumListClever(ll1, ll2){
-    let carry = ;
+function sumListByAddingEachElement(ll1, ll2){
+    
 }
 
 // turnNumberToLinkedList(123);
