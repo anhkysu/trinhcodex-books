@@ -10,6 +10,16 @@ class LinkedList {
         this.head = headNode || null;
     }
 
+    length(){
+        let length = 0;
+        let runner = this.head;
+        while(runner != null){
+            runner = runner.next;
+            length++;
+        }
+        return length;
+    }
+
     appendMultiple(itemArrays){
         let current = null;
         itemArrays.forEach((element) => {
@@ -22,6 +32,37 @@ class LinkedList {
             }
         })
         return this.head;
+    }
+
+    append(value){
+        let iterateItem = this.head;
+        if(iterateItem == null){
+            this.head = new LinkedNode(value);
+            return this.head;
+        }
+        while(iterateItem.next != null){
+            iterateItem = iterateItem.next;
+        }
+        iterateItem.next = new LinkedNode(value);
+        return this.head;
+    }
+
+    padStart(number, padItem){
+        if(number <= 0) return;
+        let newHead = null;
+        let runner = null;
+        while(number > 0){
+            if(newHead == null){
+                newHead = new LinkedNode(padItem);
+                runner = newHead;
+            } else {
+                runner.next = new LinkedNode(padItem);
+                runner = runner.next;
+            }
+            number--;
+        }
+        runner.next = JSON.parse(JSON.stringify(this.head));
+        this.head = newHead;
     }
 }
 
