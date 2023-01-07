@@ -34,6 +34,11 @@ function reverseLinkedList(headNode){
 }
 //
 
+function checkPalidromeuUsingCcompareingMethod(){
+    // only need to compare half of linked list
+    // 
+}
+
 function checkPalindromeBruteforce(headNode){
     let countItems = {};
     let runner = headNode;
