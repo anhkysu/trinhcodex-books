@@ -2,6 +2,7 @@
 let {LinkedNode, LinkedList, oneNode} =  require("./common");
 
 let one = new LinkedNode(1);
+//
 let one1 = new LinkedNode(3);
 let one2 = new LinkedNode(3);
 let one3 = new LinkedNode(1);
@@ -14,27 +15,21 @@ one2.next = one3;
 // 1->2->3->4->5->7
 
 // Library
-function reverseLinkedList(headNode){
-    console.log("AKA");
+function reverseLinkedList(headNodeOfLinkedList){
+    let runner = headNodeOfLinkedList;
     let newHead = null;
-    let runner = headNode;
-    while(runner.next != null){
-       if(newHead == null){
-            newHead = headNode;  
-            runner = headNode;
-       } else {
-            newHead = new LinkedNode(runner.data);
-            runner.next = runner.next.next;
-            newHead.next = runner;
-       }
-       runner = runner.next;
+    let oldHHead = headNodeOfLinkedList;
+    while(runner != null){
+        newHead = new LinkedNode(runner.data);
+        runner = runner.next;
+        oldHead.next = runner;
+        newHead.next = oldHead;
     }
-    console.log(JSON.stringify(newHead));
-    return newHead;
+    // lack of final entity
 }
 //
 
-function checkPalidromeuUsingCcompareingMethod(){
+function checkPalidromeuUsingCompareingMethod(){
     // only need to compare half of linked list
     // 
 }
