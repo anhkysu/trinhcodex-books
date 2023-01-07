@@ -73,7 +73,7 @@ var c = new LinkedList(7)
 a.next = b
 b.next = c
 
-var d = new LinkedList(2)
+var d = new LinkedList(4)
 var e = new LinkedList(9)
 var f = new LinkedList(5)
 

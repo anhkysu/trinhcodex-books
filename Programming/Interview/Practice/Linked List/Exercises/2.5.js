@@ -104,8 +104,47 @@ function sumListByAddingEachElementCustomLength(ll1, ll2){
     return combinedLinkedList;
 }
 
-function sumListByRecursive(ll1, ll2){
+function sumListByRecursive(ll1, ll2, carry){
+    if(ll1 == null && ll2 == null && !carry){
+        return null;
+    }
+    let rev = (ll1 ? ll1.data : 0) + (ll2 ? ll2.data : 0) + (carry ? carry : 0);
+    let data = (rev) % 10;
+    let headNode = new LinkedNode(data);
+    let nextCarry = Math.floor((rev)/10);
+
+    headNode.next = sumListByRecursive(ll1 ? ll1.next : null, ll2 ? ll2.next : null, nextCarry);
+
+    return headNode;
+}
+
+function sumListForward(ll1, ll2, carry){
+    if(typeof ll1 == LinkedList || typeof ll2 == LinkedList){
+        let length1 = ll1.length();
+        let length2 = ll2.length();
+        if(length1 < length2){
+            ll1.padStart(length2 - length1, 0);
+        } else if (length1 > length2){
+            ll2.padStart(length1 - length2, 0);
+        }
+        ll1 = ll1.head;
+        ll2 = ll2.head;
+    }
+    if(ll1 == null && ll2 == null){
+        return 0;
+    }
     
+    // let rev = (ll1 ? ll1.data : 0) + (ll2 ? ll2.data : 0) + (carry ? carry : 0);
+    let headNode = new LinkedNode();
+    let runner = headNode;
+    let nextCarry = sumListForward(ll1 ? ll1.next : null, ll2 ? ll2.next : null);
+    let data = (ll1 ? ll1.data : 0 + ll2 ? ll2.data : 0 + nextCarry) % 10;
+    runner.data = data;
+    
+    
+    
+
+    return headNode;
 }
 
 function checkLinkedListChange(aLinkedList){
@@ -115,11 +154,64 @@ function checkLinkedListChange(aLinkedList){
     }
 }
 
+function sumListForwardEasyFirst(ll1, ll2){
+    //let headNode = new LinkedNode();
+    if(ll1 == null && ll2 == null){
+        return {carry: 0, runner: null};
+    }
+    let currentSumData = (ll1 ? ll1.data : 0) + (ll2 ? ll2.data : 0);
+    let recur = sumListForwardEasyFirst(ll1 ? ll1.next : null, ll2 ? ll2.next : null);
+    let accumulatedSumData = currentSumData + recur.carry
+    let data = accumulatedSumData % 10;
+    let runner = new LinkedNode(data);
+    runner.next = recur.runner;
+    let carry = Math.floor(accumulatedSumData / 10);
+    
+    return {carry, runner};
+
+    console.log(JSON.stringify(ll1));
+    console.log(JSON.stringify(ll2));
+    // if(ll1 == null && ll2 == null){
+    //     return 0;
+    // }
+}
+
+function sumListWrapper(ll1, ll2){
+    let result = null;
+    if(ll1 instanceof LinkedList || ll2 instanceof LinkedList){
+        let length1 = ll1.length();
+        let length2 = ll2.length();
+        if(length1 < length2){
+            ll1.padStart(length2 - length1, 0);
+        } else if (length1 > length2){
+            ll2.padStart(length1 - length2, 0);
+        }
+        ll1 = ll1.head;
+        ll2 = ll2.head;
+    }
+    let {carry, runner} = sumListForwardEasyFirst(ll1, ll2);
+    if(carry > 0){
+        result = new LinkedNode(carry);
+        result.next = runner;
+    } else {
+        result = runner;
+    }
+    console.log(JSON.stringify(result));
+}
+
+function convertArrayInRevrsOderToLinkedNodes(arr){
+    let head = new LinkedNode;
+    for(let i = 0; i < arr.length; i++){
+        
+    }
+}
+
 let no1 = new LinkedList();
-no1.appendMultiple([7,1,9,6]);
+no1.appendMultiple([9,9,9,6]);
 let no2 = new LinkedList();
 no2.appendMultiple([5,9,2]);
-sumListByAddingEachElementCustomLength(no1, no2);
+sumListWrapper(no1, no2);
+//sumListByAddingEachElementCustomLength(no1, no2);
 //console.log(JSON.stringify());
 
 

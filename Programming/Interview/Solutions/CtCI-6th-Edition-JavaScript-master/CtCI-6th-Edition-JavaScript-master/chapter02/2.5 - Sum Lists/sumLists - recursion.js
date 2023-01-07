@@ -29,8 +29,10 @@ b.next = c
 var d = new LinkedList(5)
 var e = new LinkedList(9)
 var f = new LinkedList(2)
+var x = new LinkedList(8)
 
 d.next = e
 e.next = f
+f.next = x
 
 printList(sumLinkedLists(a,d))
