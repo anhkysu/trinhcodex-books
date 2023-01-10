@@ -3,12 +3,13 @@ let {LinkedNode, LinkedList, oneNode} =  require("./common");
 
 let one = new LinkedNode(1);
 //
-let one1 = new LinkedNode(3);
-let one2 = new LinkedNode(3);
-let one3 = new LinkedNode(1);
-one.next = one1;
+let one1 = new LinkedNode(1);
+let one2 = new LinkedNode(2);
+let one3 = new LinkedNode(2);
+let one4 = new LinkedNode(1);
 one1.next = one2;
 one2.next = one3;
+one3.next = one4;
 
 // 1->2->3->2->1
 // 1->2->3->2->2->1
@@ -17,21 +18,66 @@ one2.next = one3;
 // Library
 function reverseLinkedList(headNodeOfLinkedList){
     let runner = headNodeOfLinkedList;
+    let currentHead = headNodeOfLinkedList;
     let newHead = null;
-    let oldHHead = headNodeOfLinkedList;
+    let pivotPoint = null;
     while(runner != null){
-        newHead = new LinkedNode(runner.data);
+        if(pivotPoint == null){
+            pivotPoint = headNodeOfLinkedList;
+        } else {
+            newHead = new LinkedNode(runner.data);
+            newHead.next = currentHead;
+            currentHead = newHead;
+            pivotPoint.next = runner.next;
+        }
+
         runner = runner.next;
-        oldHead.next = runner;
-        newHead.next = oldHead;
     }
+    console.log(JSON.stringify(newHead));
     // lack of final entity
 }
 //
 
-function checkPalidromeuUsingCompareingMethod(){
-    // only need to compare half of linked list
-    // 
+function reverseLinkedListBetter(headNodeOfLinkedList){
+    // The way to solve is to add new item into the linked list
+    let runner = JSON.parse(JSON.stringify(headNodeOfLinkedList));
+    let currentHead = null; // Important
+    let newHead = null; 
+    while(runner != null){
+        newHead = new LinkedNode(runner.data);
+        newHead.next = currentHead;
+        currentHead = newHead;
+
+        runner = runner.next;
+    }
+    return newHead;
+    console.log(JSON.stringify(newHead));
+    // lack of final entity
+}
+
+
+function reverseAndClone(node) { 
+    let head= null; 
+    while (node != null) { 
+        n = new LinkedlistNode(node.data); // Clone 
+        n.next = head; 
+        head= n; 
+        node= node.next; 
+    } 
+    return head;
+}
+
+function checkPalidromeuUsingCompareingMethod(headNodeOfLinkedList){
+    let reversedLinkedList = reverseLinkedListBetter(headNodeOfLinkedList);
+    // compare headNodeOfLinkedList vs reversedLinkedList
+    while(headNodeOfLinkedList != null && reversedLinkedList != null){
+        if(headNodeOfLinkedList.data != reversedLinkedList.data){
+            return false;
+        }
+        headNodeOfLinkedList = headNodeOfLinkedList.next;
+        reversedLinkedList = reversedLinkedList.next;
+    }
+    return true;
 }
 
 function checkPalindromeBruteforce(headNode){
@@ -61,7 +107,7 @@ function checkPalindromeUsingReverseMethod(headNode){
 
 
 
-let result = reverseLinkedList(one1);
+let result = checkPalidromeuUsingCompareingMethod(one1);
 console.log(result);
 
 // if doubly - move to middle, and then extend front and back to check
