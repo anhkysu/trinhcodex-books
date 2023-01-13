@@ -93,46 +93,46 @@ class Queue {
     }
 
     add(itemData){ // add an item the end of the queue
+        let item = new QueueNode(itemData);
+        if(this.last != null){
+            this.last.next = item;
+        }
+        this.last = item;
         if(this.top == null){
-            this.top = new QueueNode(itemData);
-        } else if(this.last == null){
-            this.last =  new QueueNode(itemData);
-            this.top.next = this.last;
-        } else {
-            this.last.next = new QueueNode(itemData);
+            this.top = this.last;
         }
     }
 
     remove(){ //remove item at the top of the queue
-        if(this.top == null){
-            throw new Error("Queue is empty.")
-        } else if(this.last == null){
-            this.top = null;
-        } else if(this.last.next == null) {
-            this.top = this.last;
-            this.last = null;
-        } else {
-            this.top = this.top.next;
+        if(this.top == null) {
+            throw new Error("Queue is empty")
         }
+        let data = this.top.data;
+        this.top = this.top.next;
+        if(this.top == null){
+            this.last = null;
+        }
+        return data;
     }
 }
 
+// ******* Example Queues ******
+let qnodeA = new QueueNode(1);
+let qnodeB = new QueueNode(2);
+let qnodeC = new QueueNode(3);
+qnodeA.next = qnodeB;
+qnodeB.next = qnodeC;
 
+let queueA = new Queue(qnodeA, qnodeC);
+// *****************************
 
-console.log(JSON.stringify(stackA));
-stackA.pop();
-console.log(JSON.stringify(stackA));
-stackA.push(15);
-console.log(JSON.stringify(stackA));
-console.log(stackA.isEmpty());
-console.log(stackA.peek());
-console.log(JSON.stringify(stackA));
-stackA.pop();
-stackA.pop();
-stackA.pop();
-stackA.pop();
-console.log(JSON.stringify(stackA));
-console.log(stackA.isEmpty());
-stackA.push(35);
-console.log(JSON.stringify(stackA));
+console.log(JSON.stringify(queueA.top));
+queueA.remove();
+console.log(JSON.stringify(queueA.top));
+console.log(JSON.stringify(queueA.last));
+queueA.add(15);
+console.log(JSON.stringify(queueA.last));
+console.log(queueA.isEmpty());
+console.log(queueA.peek());
+console.log(JSON.stringify(queueA.top));
 
