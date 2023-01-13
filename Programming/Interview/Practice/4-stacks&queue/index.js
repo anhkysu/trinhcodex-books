@@ -126,13 +126,14 @@ qnodeB.next = qnodeC;
 let queueA = new Queue(qnodeA, qnodeC);
 // *****************************
 
-console.log(JSON.stringify(queueA.top));
-queueA.remove();
-console.log(JSON.stringify(queueA.top));
-console.log(JSON.stringify(queueA.last));
-queueA.add(15);
-console.log(JSON.stringify(queueA.last));
-console.log(queueA.isEmpty());
-console.log(queueA.peek());
-console.log(JSON.stringify(queueA.top));
+// console.log(JSON.stringify(queueA.top));
+// queueA.remove();
+// console.log(JSON.stringify(queueA.top));
+// console.log(JSON.stringify(queueA.last));
+// queueA.add(15);
+// console.log(JSON.stringify(queueA.last));
+// console.log(queueA.isEmpty());
+// console.log(queueA.peek());
+// console.log(JSON.stringify(queueA.top));
 
+module.exports = {Stack: Stack, StackedNode, Queue, QueueNode, queueA, stackA}
