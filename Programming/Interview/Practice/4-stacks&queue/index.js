@@ -48,6 +48,26 @@ nodeB.next = nodeC;
 let stackA = new Stack(nodeA);
 // *****************************
 
+// ******* Test Cases **********
+// console.log(JSON.stringify(stackA));
+// stackA.pop();
+// console.log(JSON.stringify(stackA));
+// stackA.push(15);
+// console.log(JSON.stringify(stackA));
+// console.log(stackA.isEmpty());
+// console.log(stackA.peek());
+// console.log(JSON.stringify(stackA));
+// stackA.pop();
+// stackA.pop();
+// stackA.pop();
+// stackA.pop();
+// console.log(JSON.stringify(stackA));
+// console.log(stackA.isEmpty());
+// stackA.push(35);
+// console.log(JSON.stringify(stackA));
+// *****************************
+
+
 class QueueNode {
     constructor(data){
         this.data = data;
@@ -62,9 +82,7 @@ class Queue {
     }
 
     isEmpty(){
-        if(this.top == null){
-            
-        }
+        return this.top == null;
     }
 
     peek(){ // returning the top of the queue
@@ -75,11 +93,27 @@ class Queue {
     }
 
     add(itemData){ // add an item the end of the queue
-        let new
+        if(this.top == null){
+            this.top = new QueueNode(itemData);
+        } else if(this.last == null){
+            this.last =  new QueueNode(itemData);
+            this.top.next = this.last;
+        } else {
+            this.last.next = new QueueNode(itemData);
+        }
     }
 
     remove(){ //remove item at the top of the queue
-        
+        if(this.top == null){
+            throw new Error("Queue is empty.")
+        } else if(this.last == null){
+            this.top = null;
+        } else if(this.last.next == null) {
+            this.top = this.last;
+            this.last = null;
+        } else {
+            this.top = this.top.next;
+        }
     }
 }
 
